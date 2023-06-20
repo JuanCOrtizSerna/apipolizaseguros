@@ -24,9 +24,9 @@ namespace Domain.Services
 
         public override InsurancePolicyDTO Create(InsurancePolicyDTO dto, bool autoSave = true)
         {
-            dto.PolicyNumber = new Guid();
+            dto.PolicyNumber = Guid.NewGuid().ToString();
 
-            ValidatePoliceExpiration(dto);
+            ValidateInsurancePolicy(dto);
 
             return base.Create(dto, autoSave);
         }
@@ -41,9 +41,9 @@ namespace Domain.Services
             return _mapperDependency.Map<InsurancePolicyDTO>(InsurancePolicyRepository.FindInsurancePolicyByPolicyNumber(policyNumber));
         }
 
-        private void ValidatePoliceExpiration(InsurancePolicyDTO dto)
+        public void ValidateInsurancePolicy(InsurancePolicyDTO dto)
         {
-            if(dto.PolicyExpirationDate < DateTime.Now)
+            if (dto.PolicyExpirationDate <= DateTime.Now)
             {
                 throw new Exception(GlobalResource.InvalidPolicy);
             }

@@ -35,9 +35,9 @@ namespace ApiPolizaSeguros.Controllers
 
         [HttpPost]
         [Route("FindInsurancePolicyByPolicyNumber")]
-        public virtual async Task<IActionResult> FindInsurancePolicyByPolicyNumber([FromBody] InsurancePolicyDTO policy)
+        public virtual async Task<IActionResult> FindInsurancePolicyByPolicyNumber([FromBody] RequestDTO policy)
         {
-            var data = _insurancePolicyService.FindInsurancePolicyByPolicyNumber(policy.PolicyNumber.ToString());
+            var data = _insurancePolicyService.FindInsurancePolicyByPolicyNumber(policy.Id);
 
             if (data == null)
                 return Json(ResponseExtension.AsResponseDTO<string>(null,
@@ -48,9 +48,9 @@ namespace ApiPolizaSeguros.Controllers
 
         [HttpPost]
         [Route("FindInsurancePolicyByCarLicensePlate")]
-        public virtual async Task<IActionResult> FindInsurancePolicyByCarLicensePlate([FromBody] InsurancePolicyDTO policy)
+        public virtual async Task<IActionResult> FindInsurancePolicyByCarLicensePlate([FromBody] RequestDTO policy)
         {
-            var data = _insurancePolicyService.FindInsurancePolicyByCarLicensePlate(policy.CarLicensePlate);
+            var data = _insurancePolicyService.FindInsurancePolicyByCarLicensePlate(policy.Id);
 
             if (data == null)
                 return Json(ResponseExtension.AsResponseDTO<string>(null,

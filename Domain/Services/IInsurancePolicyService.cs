@@ -7,5 +7,7 @@ namespace Domain.Services
         InsurancePolicyDTO FindInsurancePolicyByCarLicensePlate(string carLicensePlate);
 
         InsurancePolicyDTO FindInsurancePolicyByPolicyNumber(string policyNumber);
+
+        void ValidateInsurancePolicy(InsurancePolicyDTO dto);
     }
 }

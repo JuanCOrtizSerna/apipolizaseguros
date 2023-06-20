@@ -17,5 +17,14 @@ namespace Repository.Database
             this.Client = client;
             Database = Client.GetDatabase(settings.Value.Database);
         }
+
+        public DbContext(IMongoDatabase database, IMongoClient client)
+        {
+            MongoDefaults.MaxConnectionIdleTime = TimeSpan.FromSeconds(60);
+            MongoDefaults.SocketTimeout = TimeSpan.FromSeconds(120);
+            MongoDefaults.ConnectTimeout = TimeSpan.FromSeconds(120);
+            this.Database = database;
+            this.Client = client;
+        }
     }
 }

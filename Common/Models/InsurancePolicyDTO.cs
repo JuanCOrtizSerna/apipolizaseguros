@@ -5,7 +5,7 @@ namespace Common.Models
     {
         public string Id { get; set; }
 
-        public Guid PolicyNumber { get; set; }
+        public string PolicyNumber { get; set; }
 
         public string ClientName { get; set; }
 
@@ -25,7 +25,7 @@ namespace Common.Models
 
         public float MaximumPolicyValue { get; set; }
 
-        public float PolicyName { get; set; }
+        public string PolicyName { get; set; }
 
         public string CarLicensePlate { get; set; }
 

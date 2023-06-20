@@ -51,6 +51,9 @@ namespace Config.Dependencies
             #region services and repositories
 
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IInsurancePolicyService, InsurancePolicyService>();
+            services.AddScoped<IBaseCRUDRepository<InsurancePolicy>, InsurancePolicyRepository>();
+            services.AddScoped<IInsurancePolicyRepository, InsurancePolicyRepository>();
             services.AddScoped<IBaseCRUDRepository<User>, UserRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<ILoginService, LoginService>();
