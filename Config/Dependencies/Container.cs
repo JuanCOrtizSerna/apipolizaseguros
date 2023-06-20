@@ -53,6 +53,7 @@ namespace Config.Dependencies
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IBaseCRUDRepository<User>, UserRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<ILoginService, LoginService>();
 
             #endregion
 

@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Domain.Services
 {
-    public class LoginService
+    public class LoginService: ILoginService
     {
         public IUserService UserService;
 
