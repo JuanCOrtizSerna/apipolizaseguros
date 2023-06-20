@@ -27,6 +27,8 @@ builder.Services.AddAuthentication(options =>
     options.TokenValidationParameters.IssuerSigningKey = new SymmetricSecurityKey(
         Encoding.ASCII.GetBytes(builder.Configuration.GetSection("JWT_KEY").ToString())
         );
+    options.TokenValidationParameters.ValidateAudience = false;
+    options.TokenValidationParameters.ValidateIssuer = false;
 });
 ;
 

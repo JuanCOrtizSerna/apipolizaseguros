@@ -123,6 +123,9 @@
   <data name="DeleteSuccessMessage" xml:space="preserve">
     <value>El elemento fue removido exitosamente.</value>
   </data>
+  <data name="InvalidPolicy" xml:space="preserve">
+    <value>La póliza es invalida, la fecha de expiración es menor a la fecha actual.</value>
+  </data>
   <data name="ItemNotFoundMessage" xml:space="preserve">
     <value>El elemento no fue encontrado.</value>
   </data>

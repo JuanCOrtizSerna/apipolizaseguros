@@ -10,6 +10,7 @@ namespace Config.Dependencies
         public AutoMapperProfile()
         {
             CreateMap<User, UserDTO>().ReverseMap();
+            CreateMap<InsurancePolicy, InsurancePolicyDTO>().ReverseMap();
 
             //Mapeo para ObjectId en MongoDB
             CreateMap<List<ObjectId>, List<string>>().ConvertUsing(o => o.Select(os => os.ToString()).ToList());

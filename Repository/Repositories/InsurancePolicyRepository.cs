@@ -1,4 +1,5 @@
-﻿using Repository.Database;
+﻿using MongoDB.Driver;
+using Repository.Database;
 using Repository.Entities;
 
 namespace Repository.Repositories
@@ -16,6 +17,24 @@ namespace Repository.Repositories
         public InsurancePolicyRepository(IMongoDbContext dbContext)
             : base(dbContext)
         {
+        }
+
+        public InsurancePolicy FindInsurancePolicyByCarLicensePlate(string carLicensePlate)
+        {
+            var filter = Builders<InsurancePolicy>.Filter.Eq("CarLicensePlate", carLicensePlate);
+
+            var insurancePolicy = _Table.Find(filter).FirstOrDefault();
+
+            return insurancePolicy;
+        }
+
+        public InsurancePolicy FindInsurancePolicyByPolicyNumber(string policyNumber)
+        {
+            var filter = Builders<InsurancePolicy>.Filter.Eq("PolicyNumber", policyNumber);
+
+            var insurancePolicy = _Table.Find(filter).FirstOrDefault();
+
+            return insurancePolicy;
         }
     }
 }

@@ -79,6 +79,15 @@ namespace Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to La póliza es invalida, la fecha de expiración es menor a la fecha actual..
+        /// </summary>
+        public static string InvalidPolicy {
+            get {
+                return ResourceManager.GetString("InvalidPolicy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to El elemento no fue encontrado..
         /// </summary>
         public static string ItemNotFoundMessage {
